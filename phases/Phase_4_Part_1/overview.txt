@@ -1,0 +1,54 @@
+Phase 04 - Part 1 Overview
+Daniel Yoo
+
+This folder contains the coding work for  Phase 04 Part 1.
+I organized the work into 4 folders based on the 4 required use cases for this phase:
+
+1. Login
+2. Logout
+3. Begin Typing Test
+4. Complete Typing Test
+
+How the code is organized:
+- Each use case has its own folder.
+- Each folder contains one main TypeScript file with the code for that use case.
+- Shared classes and shared in-memory data are stored in CommonData.ts.
+
+Why I kept it simple:
+- I wanted y'all to be able to open the folders and quickly understand what each file does.
+- I avoided over-complicated names and extra layers.
+- I used straightforward class names like LoginUseCase and BeginTypingTestUseCase.
+
+NOTE FOR AHMAD AND ANYONE ELSE DOING BACKEND
+- This version uses in-memory storage only.
+- It does not connect to a real database (AT LEAST FOR NOW)
+- It is designed so the testing team can call the methods directly for Phase 04.
+
+Seed login account for quick testing (USE THIS GUYS FOR PART 2):
+- email: daniel@example.com
+- password: password123
+
+Main shared file:
+- CommonData.ts
+
+What is inside CommonData.ts:
+- User
+- Session
+- TypingTest
+- TypingTestSession
+- TestResult
+- SimpleDataStore
+
+Use case files:
+- 1_Login/LoginUseCase.ts
+- 2_Logout/LogoutUseCase.ts
+- 3_Begin_Typing_Test/BeginTypingTestUseCase.ts
+- 4_Complete_Typing_Test/CompleteTypingTestUseCase.ts
+
+Summary:
+- LoginUseCase.login(email, password)
+- LogoutUseCase.logout(userId)
+- BeginTypingTestUseCase.beginTypingTest(userId, duration, text)
+- CompleteTypingTestUseCase.completeTypingTest(typingSessionId, correctChars, totalChars, duration)
+
+Comments were added where they help explain what is happening for your convenience

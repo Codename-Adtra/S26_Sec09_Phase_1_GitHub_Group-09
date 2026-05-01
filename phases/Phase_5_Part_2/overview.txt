@@ -1,0 +1,63 @@
+TypeShi - Phase 5 Part 2 (Section 2d)
+Contributors: Hunter, Karthik
+
+Language: TypeScript (Node.js, in-memory only)
+
+
+WHAT WAS DONE
+Section 2d of Phase 5: the concrete, narrowed-down test cases
+from Section 2c were implemented as an assert-based test suite.
+
+The test file (test.ts) uses Node's built-in "assert" module and
+exercises both use cases from Phase 5 Part 1:
+
+1. Generate Test Text
+   - Verifies wordCount = 10 and wordCount = 25 produce content
+     with the correct number of space-separated words.
+   - Verifies textId prefix ("text-") and createdAt is a Date.
+   - Asserts that wordCount = 0 throws
+     "wordCount must be greater than 0."
+   - Uses a 2-word custom WordBank ("alpha", "beta") to confirm
+     that every generated word comes from the provided bank.
+   - Asserts that an empty WordBank throws "Word bank is empty."
+
+2. Display Test Results
+   - High performer case (session-001, wpm 95, accuracy 98.5).
+   - Beginner case (session-002, wpm 20, accuracy 74.0).
+   - Asserts that the returned DisplayedTestResult keeps all
+     input fields and produces a non-empty summaryMessage.
+   - Asserts that invalid inputs throw:
+       * negative wpm (session-003)
+       * accuracy > 100  (session-004)
+       * negative totalChars (session-005)
+
+On success the suite prints:
+    "Phase 5 - 2d concrete assert-based test cases passed."
+
+---
+
+FOLDER STRUCTURE
+
+Phase_5_Part_2/
+    CommonData.ts
+    tsconfig.json
+    test.ts
+    1_Generate_Test_Text/
+        GenerateTestTextUseCase.ts
+    2_Display_Test_Results/
+        DisplayTestResultsUseCase.ts
+
+The source files (CommonData.ts, GenerateTestTextUseCase.ts,
+DisplayTestResultsUseCase.ts) are mirrored from Phase_5_Part_1
+so this folder can be compiled and run on its own.
+
+HOW TO RUN
+Install ts-node if needed:
+    npm install -g ts-node typescript
+
+From inside Phase_5_Part_2/ run:
+    npx ts-node test.ts
+
+Exit code 0 and the "...passed." line mean every assertion
+in section 2d held. Any failing assertion will throw an
+AssertionError and abort the run.
