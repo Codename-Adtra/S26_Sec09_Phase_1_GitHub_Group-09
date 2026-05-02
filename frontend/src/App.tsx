@@ -2,9 +2,10 @@
 
 import { Auth0Provider } from "@auth0/auth0-react";
 import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { env } from "./config/env";
 import { useAuth } from "./hooks/useAuth";
+import { useTheme, THEMES } from "./hooks/useTheme";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
@@ -52,6 +53,7 @@ function Shell() {
                 </button>
                 <div className="nav-links">
                     <button className="nav-link" onClick={() => navigate("/about")}>about</button>
+                    <ThemePicker />
                     {isAuthenticated ? (
                         <>
                             <button className="nav-link" onClick={() => navigate("/profile")}>
@@ -76,6 +78,45 @@ function Shell() {
             </Routes>
 
             <footer className="footer">TypeShi | CS 3354.009 Group 09</footer>
+        </div>
+    );
+}
+
+function ThemePicker() {
+    const { theme, setTheme } = useTheme();
+    const [open, setOpen] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!open) return;
+        function onClick(e: MouseEvent) {
+            if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+        }
+        document.addEventListener("mousedown", onClick);
+        return () => document.removeEventListener("mousedown", onClick);
+    }, [open]);
+
+    return (
+        <div className="theme-picker" ref={ref}>
+            <button className="nav-link" onClick={() => setOpen(o => !o)}>theme</button>
+            {open && (
+                <div className="theme-dropdown">
+                    {THEMES.map(t => (
+                        <button
+                            key={t.id}
+                            className={`theme-option${theme === t.id ? " active" : ""}`}
+                            onClick={() => { setTheme(t.id); setOpen(false); }}
+                        >
+                            <span className="theme-swatch">
+                                <span className="theme-swatch-bg" style={{ background: t.bg }} />
+                                <span className="theme-swatch-accent" style={{ background: t.accent }} />
+                                <span className="theme-swatch-danger" style={{ background: t.danger }} />
+                            </span>
+                            <span>{t.name}</span>
+                        </button>
+                    ))}
+                </div>
+            )}
         </div>
     );
 }

@@ -241,7 +241,7 @@ export default function Profile() {
                 <div className="loading" style={{ padding: "20px 0" }}>loading...</div>
             ) : tests.length === 0 ? (
                 <div className="empty-state">
-                    no tests yet — <Link to="/" style={{ color: "#10b981", textDecoration: "underline" }}>take a typing test</Link> to see your history
+                    no tests yet — <Link to="/" style={{ color: "var(--accent)", textDecoration: "underline" }}>take a typing test</Link> to see your history
                 </div>
             ) : (
                 <>
@@ -323,7 +323,7 @@ export default function Profile() {
 function StatSkeleton() {
     return (
         <div className="stat-card">
-            <div className="stat-value" style={{ color: "#3a3a5a" }}>—</div>
+            <div className="stat-value" style={{ color: "var(--text-pending)" }}>—</div>
             <div className="stat-label">loading</div>
         </div>
     );

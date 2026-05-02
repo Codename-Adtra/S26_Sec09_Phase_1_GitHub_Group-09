@@ -17,24 +17,24 @@ export default function About() {
         <div className="container" style={{ maxWidth: 720 }}>
             <div style={{ marginBottom: 48 }}>
                 <h1 style={{ fontSize: 36, fontWeight: 600, marginBottom: 8 }}>
-                    about Type&nbsp;<span style={{ color: "#ef4444" }}>シ</span>
+                    about Type&nbsp;<span style={{ color: "var(--danger)" }}>シ</span>
                 </h1>
-                <p style={{ color: "#9ca3af", fontSize: 15, lineHeight: 1.7 }}>
+                <p style={{ color: "var(--text-muted)", fontSize: 15, lineHeight: 1.7 }}>
                     CS 3354.009 · Group 09 · Spring 2026 · Prof. Priya Narayanasami · UT Dallas
                 </p>
             </div>
 
             <section style={{ marginBottom: 40 }}>
-                <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: "#e2e8f0" }}>
+                <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: "var(--text)" }}>
                     why we built this
                 </h2>
-                <p style={{ color: "#9ca3af", lineHeight: 1.8, marginBottom: 12 }}>
+                <p style={{ color: "var(--text-muted)", lineHeight: 1.8, marginBottom: 12 }}>
                     TypeShi is a web-based typing performance application that helps users improve their
                     typing speed and accuracy. Built as our semester-long Software Engineering project,
                     it puts into practice everything from requirements gathering and system design all
                     the way through implementation and deployment.
                 </p>
-                <p style={{ color: "#9ca3af", lineHeight: 1.8 }}>
+                <p style={{ color: "var(--text-muted)", lineHeight: 1.8 }}>
                     We took inspiration from platforms like Monkeytype and TypeRacer - apps our team
                     already used, and set out to build something clean and functional that covers the
                     full stack: a React + TypeScript frontend, a Node + Express + Prisma backend, and
@@ -43,7 +43,7 @@ export default function About() {
             </section>
 
             <section style={{ marginBottom: 40 }}>
-                <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: "#e2e8f0" }}>
+                <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: "var(--text)" }}>
                     what it does
                 </h2>
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8 }}>
@@ -56,8 +56,8 @@ export default function About() {
                         "Test history saved per user, viewable in your profile dashboard",
                         "Aggregate stats: average WPM, best WPM, total tests, average accuracy"
                     ].map(item => (
-                        <li key={item} style={{ display: "flex", gap: 10, alignItems: "flex-start", color: "#9ca3af", fontSize: 15 }}>
-                            <span style={{ color: "#10b981", marginTop: 2, flexShrink: 0, fontSize: 10 }}>■</span>
+                        <li key={item} style={{ display: "flex", gap: 10, alignItems: "flex-start", color: "var(--text-muted)", fontSize: 15 }}>
+                            <span style={{ color: "var(--accent)", marginTop: 2, flexShrink: 0, fontSize: 10 }}>■</span>
                             {item}
                         </li>
                     ))}
@@ -65,12 +65,12 @@ export default function About() {
             </section>
 
             <section style={{ marginBottom: 40 }}>
-                <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 20, color: "#e2e8f0" }}>
+                <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 20, color: "var(--text)" }}>
                     the team
                 </h2>
 
                 <div style={{ marginBottom: 24 }}>
-                    <div style={{ fontSize: 12, color: "#6b7280", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>
+                    <div style={{ fontSize: 12, color: "var(--text-dim)", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>
                         front-end
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -79,7 +79,7 @@ export default function About() {
                 </div>
 
                 <div>
-                    <div style={{ fontSize: 12, color: "#6b7280", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>
+                    <div style={{ fontSize: 12, color: "var(--text-dim)", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>
                         back-end
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -89,7 +89,7 @@ export default function About() {
             </section>
 
             <section style={{ marginBottom: 40 }}>
-                <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: "#e2e8f0" }}>
+                <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: "var(--text)" }}>
                     tech stack
                 </h2>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
@@ -101,9 +101,9 @@ export default function About() {
                         ["ORM / DB", "Prisma + PostgreSQL 16"],
                         ["Dev infra", "Docker Compose, ts-node-dev"]
                     ].map(([label, value]) => (
-                        <div key={label} style={{ background: "#1a1a1a", borderRadius: 8, padding: "14px 16px" }}>
-                            <div style={{ fontSize: 11, color: "#6b7280", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>{label}</div>
-                            <div style={{ fontSize: 14, color: "#e2e8f0" }}>{value}</div>
+                        <div key={label} style={{ background: "var(--bg-elevated)", borderRadius: 8, padding: "14px 16px" }}>
+                            <div style={{ fontSize: 11, color: "var(--text-dim)", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>{label}</div>
+                            <div style={{ fontSize: 14, color: "var(--text)" }}>{value}</div>
                         </div>
                     ))}
                 </div>
@@ -114,12 +114,12 @@ export default function About() {
 
 function MemberCard({ name, email, role }: { name: string; email: string; role: string }) {
     return (
-        <div style={{ background: "#1a1a1a", borderRadius: 8, padding: "14px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+        <div style={{ background: "var(--bg-elevated)", borderRadius: 8, padding: "14px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
             <div>
                 <div style={{ fontWeight: 600, fontSize: 15 }}>{name}</div>
-                <div style={{ fontSize: 13, color: "#6b7280", marginTop: 2 }}>{role}</div>
+                <div style={{ fontSize: 13, color: "var(--text-dim)", marginTop: 2 }}>{role}</div>
             </div>
-            <a href={`mailto:${email}`} style={{ fontSize: 13, color: "#9ca3af" }}>{email}</a>
+            <a href={`mailto:${email}`} style={{ fontSize: 13, color: "var(--text-muted)" }}>{email}</a>
         </div>
     );
 }
