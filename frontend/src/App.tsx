@@ -75,7 +75,7 @@ function Shell() {
                 <Route path="/about" element={<About />} />
             </Routes>
 
-            <footer className="footer">TypeShi — CS 3354.009 Group 09</footer>
+            <footer className="footer">TypeShi | CS 3354.009 Group 09</footer>
         </div>
     );
 }

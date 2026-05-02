@@ -17,7 +17,7 @@ export default function About() {
         <div className="container" style={{ maxWidth: 720 }}>
             <div style={{ marginBottom: 48 }}>
                 <h1 style={{ fontSize: 36, fontWeight: 600, marginBottom: 8 }}>
-                    about&nbsp;<span style={{ color: "#ef4444" }}>typeシ</span>
+                    about Type&nbsp;<span style={{ color: "#ef4444" }}>シ</span>
                 </h1>
                 <p style={{ color: "#9ca3af", fontSize: 15, lineHeight: 1.7 }}>
                     CS 3354.009 · Group 09 · Spring 2026 · Prof. Priya Narayanasami · UT Dallas
@@ -35,8 +35,8 @@ export default function About() {
                     the way through implementation and deployment.
                 </p>
                 <p style={{ color: "#9ca3af", lineHeight: 1.8 }}>
-                    We took inspiration from platforms like Monkeytype and TypeRacer — apps our team
-                    already used — and set out to build something clean and functional that covers the
+                    We took inspiration from platforms like Monkeytype and TypeRacer - apps our team
+                    already used, and set out to build something clean and functional that covers the
                     full stack: a React + TypeScript frontend, a Node + Express + Prisma backend, and
                     Auth0 for authentication.
                 </p>
@@ -48,11 +48,11 @@ export default function About() {
                 </h2>
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8 }}>
                     {[
-                        "Timed typing tests — 15 s, 30 s, 60 s, or 120 s",
+                        "Timed typing tests - 15 s, 30 s, 60 s, or 120 s",
                         "Real-time character-by-character feedback (green / red)",
                         "WPM and accuracy calculated on test completion",
                         "Word bank of 200+ common English words, randomised each test",
-                        "Authenticated accounts via Auth0 — no passwords stored by us",
+                        "Authenticated accounts via Auth0 - no passwords stored by us",
                         "Test history saved per user, viewable in your profile dashboard",
                         "Aggregate stats: average WPM, best WPM, total tests, average accuracy"
                     ].map(item => (
@@ -95,7 +95,7 @@ export default function About() {
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                     {[
                         ["Frontend", "React 18, TypeScript, Vite, React Router"],
-                        ["Styling", "Handwritten CSS — no framework"],
+                        ["Styling", "Handwritten CSS - no framework"],
                         ["Auth", "Auth0 (React SDK + JWT bearer)"],
                         ["Backend", "Node.js, Express, TypeScript"],
                         ["ORM / DB", "Prisma + PostgreSQL 16"],
